@@ -25,15 +25,7 @@ function App() {
 
   const initilaState={userName:"",userEmail:"",showName:true,isEmail:false,isPassword:false,time:null,focus:false,greetings:""}
   const [state,dispatch]=useReducer(reducerFunc,initilaState)
-
-  // const [userName,setUserName]=useState()
-  // const [userEmail,setUserEmail]=useState("")
-  // const [isEmail,setIsEmail]=useState(false)
-  // const [showName,setShowName]=useState(true)
-  // const [isPassword,setIsPassword]=useState(false)
-  // const [Time,setTime]=useState()
-  // const [focus,setFocus]=useState(false)
-  // const [greeting,setGreeting]=useState()
+  
   let date=new Date()
   let hours=(date.getHours()<10?"0":"")+date.getHours()
   let minutes=(date.getMinutes()<10?"0":'')+date.getMinutes()
