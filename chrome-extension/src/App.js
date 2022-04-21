@@ -1,54 +1,75 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import './App.css';
 import {v4 as uuid} from "uuid";
 
-function App() {  
+function App() {
 
-  const [userName,setUserName]=useState()
-  const [userEmail,setUserEmail]=useState("")
-  const [isEmail,setIsEmail]=useState(false)
-  const [showName,setShowName]=useState(true)
-  const [isPassword,setIsPassword]=useState(false)
-  const [Time,setTime]=useState()
-  const [focus,setFocus]=useState(false)
-  const [greeting,setGreeting]=useState()
+  const reducerFunc=(state,action)=>{
+    switch (action.type) {
+      case 'set-name':
+        return {...state,userName:action.nameValue}
+      case 'set-email':
+        return {...state,userEmail:action.emailValue}
+      case "email-true-showName-false":
+        return {...state,isEmail:true,showName:false}
+      case "password-true-email-false":
+        return {...state,isPassword:true,isEmail:false}
+      case "password-false-focus-true":
+        return {...state,isPassword:false,focus:true,time:action.timeValue}
+      case 'greetings':
+        return {...state,greetings:action.greet}
+      default:
+        break;
+    }
+  }
+
+  const initilaState={userName:"",userEmail:"",showName:true,isEmail:false,isPassword:false,time:null,focus:false,greetings:""}
+  const [state,dispatch]=useReducer(reducerFunc,initilaState)
+
+  // const [userName,setUserName]=useState()
+  // const [userEmail,setUserEmail]=useState("")
+  // const [isEmail,setIsEmail]=useState(false)
+  // const [showName,setShowName]=useState(true)
+  // const [isPassword,setIsPassword]=useState(false)
+  // const [Time,setTime]=useState()
+  // const [focus,setFocus]=useState(false)
+  // const [greeting,setGreeting]=useState()
   let date=new Date()
   let hours=(date.getHours()<10?"0":"")+date.getHours()
   let minutes=(date.getMinutes()<10?"0":'')+date.getMinutes()
 
   const continueNameHandler=()=>{
-    setIsEmail(true)
-    setShowName(false)
+    dispatch({type:"email-true-showName-false"})
     }
 
   const continueEmailHandler=()=>{
-    setIsPassword(true)
-    setIsEmail(false)
+    dispatch({type:"password-true-email-false"})
   }
 
   const passwordHandler=()=>{
-    setIsPassword(false)
-    setFocus(true)
-    setTime(`${hours}:${minutes}`);
+    dispatch({type:"password-false-focus-true",timeValue:`${hours}:${minutes}`})
     if(hours>5&&hours<12)
     {
-      setGreeting("good morning")
-    }else if(hours>=12&&hours<5)
+      dispatch({type:"greetings",greet:"good morning"})
+    }else if(hours>=12&&hours<17)
     {
-      setGreeting("good afternoon")
+      dispatch({type:"greetings",greet:"good afternoon"})
     }else if(hours<5)
     {
-      setGreeting("good evening")
+      dispatch({type:"greetings",greet:"good evening"})
     }
   }
+
+  const {showName,isEmail,userName,isPassword,focus,time,greetings}=state
 
 
   return (
     <div className='extension-container'>
       {showName&&
       <div>
+        {console.log(state.userName)}
       <h1 className='main-heading'>Hello,What's your name?</h1>
-      <input onChange={(e)=>setUserName(e.target.value)} className='detail-input' type="text" />
+      <input onChange={(e)=>dispatch({type:"set-name",nameValue:e.target.value})} className='detail-input' type="text" />
       <div>
       <button onClick={continueNameHandler} className='Countinue-btn'>Continue</button>
       </div>
@@ -56,7 +77,7 @@ function App() {
       }
       {isEmail&&<div>
       <h1 className='main-heading'>{`What's your email ${userName}`}</h1>
-      <input onChange={(e)=>setUserEmail(e.target.value)} className='detail-input' type="text" />
+      <input onChange={(e)=>dispatch({type:"set-email",emailValue:e.target.value})} className='detail-input' type="text" />
       <div>
       <button onClick={continueEmailHandler} className='Countinue-btn'>Continue</button>
       </div>
@@ -71,8 +92,8 @@ function App() {
       </div>
       }
       {focus&&<div>
-      <div className='main-heading extension-time'>{Time}</div>
-      <h1 className='main-heading'>{`${greeting} ${userName}`}</h1>
+      <div className='main-heading extension-time'>{time}</div>
+      <h1 className='main-heading'>{`${greetings} ${userName}`}</h1>
       <h1 className='main-heading'>What's your main focus for today?</h1>
       <input className='detail-input' type="password" />
       <div>
