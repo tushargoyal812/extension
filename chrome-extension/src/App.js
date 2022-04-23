@@ -33,13 +33,7 @@ function App() {
   const [editId,setEditId]=useState()
 
   const addHandler=(value)=>{
-  if(todoValues.some(todo=>todo.id===editId.id)){
-    console.log("if chala",editId);
-    setTodoValues([...todoValues,{...editId,todoName:value}])
-  }else{
-    console.log("else chala");
     setTodoValues([...todoValues,{id:uuid(),todoName:value,isDone:false}])
-  }
   setTodoInput("")
 }
 
