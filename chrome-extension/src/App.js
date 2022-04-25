@@ -89,7 +89,6 @@ function App() {
     <div className='extension-container'>
       {showName&&
       <div>
-        {console.log(state.userName)}
       <h1 className='main-heading'>Hello,What's your name?</h1>
       <input onChange={(e)=>dispatch({type:"set-name",nameValue:e.target.value})} className='detail-input' type="text" />
       <div>
