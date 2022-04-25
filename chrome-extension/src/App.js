@@ -38,8 +38,8 @@ function App() {
 }
 
   const todoInputHandler=(id)=>{
-  let newValue=todoValues.map(item=>item.id===id?{...item,isDone:!item.isDone}:item)
-  setTodoValues(newValue)
+  let newTodo=todoValues.map(item=>item.id===id?{...item,isDone:!item.isDone}:item)
+  setTodoValues(newTodo)
 }
   
   let date=new Date()
@@ -123,7 +123,6 @@ function App() {
       </div>
       {showModal&&<div className='ToDo-modal-container'>
         <div className='ToDo-modal'>
-          {console.log(todoValues,"from below")}
           {todoValues.map(item=><div key={item.id}>
             <div className='todo-container'>
             <input onChange={()=>todoInputHandler(item.id)} type="checkbox" name="" id="" /><span className='todo-names' style={{textDecoration:item.isDone?"line-through":"none"}}>{item.todoName}</span><span onClick={()=>editHandler(item)} class="material-symbols-rounded">edit</span><span onClick={()=>cancelHandler(item.id)} class="material-symbols-rounded cursor-pointer">close</span>
