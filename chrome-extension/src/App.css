@@ -9,6 +9,14 @@ body{
 }
 
 
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.todo-names{
+  font-size: 1.3rem;
+}
+
 .extension-container{
   height: 100vh;
   display: flex;
@@ -17,8 +25,28 @@ body{
   text-align: center;
 }
 
+
 .extension-time{
   font-size: 10rem;
+}
+
+.main-focus{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ToDo-modal-container{
+  position: absolute;
+  left:42rem;
+  top: 17rem;
+}
+
+.ToDo-button{
+  position: absolute;
+  left:55rem;
+  top: 31rem;
+  color:white;
 }
 
 .Countinue-btn{
@@ -32,22 +60,45 @@ body{
 }
 
 .ToDo-modal{
-  background-color: white;
-  height: 12rem;
-  width: 15rem;
+  height: 15rem;
+  width: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  background-color: white;
+  border-radius: 0.4rem;
 }
 
-/* .todo-input{
-  align-self: center;
-  justify-self: center;
-} */
+.todo-input{
+  border: none;
+  font-size: 1.3rem;
+  width: 13rem;
+}
+
+.todo-add{
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.todo-input:focus{
+  outline: none;
+}
 
 .main-heading{
   color: white;
+}
+
+.todo-input-button{
+  margin: 1rem;
+}
+
+.todo-container{
+  display: flex;
 }
 
 .detail-input{
