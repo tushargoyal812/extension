@@ -115,3 +115,52 @@ body{
 .detail-input:focus{
   outline: none;
 }
+
+
+.weather{
+  position: absolute;
+  top: -8rem;
+  left: 60rem;
+  color: white;
+}
+
+.weather-modal{
+  height: 15rem;
+  width: 22rem;
+  background-color: white;
+  border-radius: 0.2rem;
+  display: flex;
+}
+
+.weather-modal-container{
+  position: absolute;
+  top: -5rem;
+  left: 42rem;
+}
+
+.modal-temp{
+  align-self: center;
+  font-size: 2rem;
+  position: relative;
+}
+
+.location-container{
+  padding: 1rem;
+}
+
+.degree-symbol-modal{
+  position: absolute;
+  top: 2.5rem;
+  left: 4.5rem;
+  font-size: 4rem;
+}
+
+.weather-details{
+  padding: 1rem;
+}
+
+.degree-symbol{
+  position: absolute;
+  top:0;
+  left: 1.9rem;
+}
