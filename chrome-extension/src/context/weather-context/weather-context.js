@@ -7,7 +7,8 @@ const WeatherContext=createContext()
 const WeatherProvider=({children})=>{
     const [geoLocation,setGeoLocation]=useState({latitude:null,longitude:null})
     const [weather,setWeather]=useState()
-    return <WeatherContext.Provider value={{geoLocation,setGeoLocation,weather,setWeather}} >{children}</WeatherContext.Provider>
+    const [weatherModal,setWeatherModal]=useState(false)
+    return <WeatherContext.Provider value={{geoLocation,setGeoLocation,weather,setWeather,weatherModal,setWeatherModal}} >{children}</WeatherContext.Provider>
 }
 
 

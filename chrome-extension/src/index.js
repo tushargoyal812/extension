@@ -4,13 +4,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { TodoProvider } from './context/todo-context/todo-context';
+import { HomeProvider } from './context/home-content-context/home-content-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <HomeProvider>
+    <TodoProvider>
     <WeatherProvider>
     <App />
     </WeatherProvider>
+    </TodoProvider>
+    </HomeProvider>
   </React.StrictMode>
 );
 
