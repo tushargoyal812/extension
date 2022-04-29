@@ -1,0 +1,51 @@
+
+.count-down-btn{
+    position: fixed;
+    top: 2rem;
+    left: 3rem;
+    color:white;
+  }
+
+  .add-icon{
+    font-size: 2rem;
+  }
+
+  .count-down-modal{
+    width: 15rem;
+    height: 10rem;
+    background-color: white;
+  }
+
+  .count-down-container{
+    position: fixed;
+    top: 6rem;
+    left: 3rem;
+  }
+
+  .add-count-down{
+    display: flex;
+    justify-content:space-around;
+  }
+
+  .add-countdown-modal{
+    width: 15rem;
+    height: 15rem;
+    background-color: white;
+  }
+
+  .add-countdown-container{
+    position: fixed;
+    top: 6rem;
+    left: 3rem;
+  }
+
+  .countdown-input{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .today-focus{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+  }
