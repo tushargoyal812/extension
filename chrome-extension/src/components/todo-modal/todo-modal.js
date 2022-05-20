@@ -2,8 +2,19 @@ import { addHandler } from "../../utils-func/add-todo-handler"
 import { todoInputHandler } from "../../utils-func/todo-input-handler"
 import { cancelHandler } from "../../utils-func/cancel-handler"
 import { useTodo } from "../../context/todo-context/todo-context"
+import { useEffect } from "react"
 export const TodoModal=()=>{
     const {setTodoValues,todoValues,setTodoInput,todoInput}=useTodo()
+    useEffect(()=>{
+      localStorage.setItem("todo",JSON.stringify(todoValues))
+    },[todoValues])
+
+    // useEffect(()=>{
+    //   let todos=JSON.parse(localStorage.getItem("todo"))
+    //   if(todos){
+    //     setTodoValues(todos)
+    //   }
+    // },[])
     return(
         <div className='ToDo-modal-container'>
         <div className='ToDo-modal'>
