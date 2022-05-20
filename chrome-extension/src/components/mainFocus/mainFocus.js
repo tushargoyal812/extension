@@ -10,7 +10,6 @@ import { useState,useEffect } from "react"
 // import { useTodo } from "../../context/todo-context/todo-context"
 export const MainFocus=()=>{
     const {dispatch,state,userNameState}=useHome()
-    // const {todoValues,setTodoValues}=useTodo()
     const {weatherModal,setWeatherModal,weather}=useWeather()
     const {showModal}=state
     const [showCountDown,setShowCountDown]=useState(false)
@@ -130,7 +129,7 @@ export const MainFocus=()=>{
       {
         setGreet("Good Evening")
       }
-    },[new Date()])
+    },[])
 
 
     useEffect(()=>{

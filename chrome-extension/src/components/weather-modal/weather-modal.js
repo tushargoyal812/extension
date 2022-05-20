@@ -1,9 +1,7 @@
-import { useEffect } from "react";
-import axios from "axios";
 import { useWeather } from "../../context/weather-context/weather-context";
 
 export const WeatherModal=()=>{
-    const {setWeather,weather,geoLocation,setGeoLocation}=useWeather()
+    const {weather}=useWeather()
     
     
       
