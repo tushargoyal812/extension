@@ -10,7 +10,7 @@ import { MainFocus } from './components/mainFocus/mainFocus';
 function App() {
 
   const {setWeather,setGeoLocation,geoLocation}=useWeather()
-  const {state}=useHome()
+  const {state,userNameState}=useHome()
   
 
   var options = {
@@ -40,16 +40,18 @@ function App() {
   },[geoLocation.latitude,geoLocation.longitude])
 
 
+  console.log(userNameState,"state");
+  useEffect(()=>{
+    console.log("useEffect chala");
+    localStorage.setItem("userName",userNameState)
+  },[userNameState])
 
-  const {showName,isEmail,isPassword,focus}=state
+  const {showName,userName}=state
 
 
   return (
     <div className='extension-container'>
-      {showName&&<ShowName/>}
-      {isEmail&&<ShowEmail/>}
-      {isPassword&&<ShowPassword/>}
-      {focus&&<MainFocus/>}
+      {userNameState?<MainFocus/>:<ShowName/>}
     </div>
   );
 }

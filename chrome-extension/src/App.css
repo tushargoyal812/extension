@@ -1,5 +1,7 @@
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root{
@@ -29,9 +31,9 @@ body{
   text-align: center;
 }
 
-
 .extension-time{
   font-size: 10rem;
+  color:var(--initial-color)
 }
 
 .main-focus{
@@ -41,15 +43,15 @@ body{
 }
 
 .ToDo-modal-container{
-  position: absolute;
-  left:42rem;
-  top: 17rem;
+  position: fixed;
+  right:2.5rem;
+  bottom: 4.5rem;
 }
 
 .ToDo-button{
-  position: absolute;
-  left:55rem;
-  top: 31rem;
+  position: fixed;
+  right:2.5rem;
+  bottom: 2rem;
   color:var(--initial-color);
 }
 
@@ -85,7 +87,7 @@ body{
   color: var(--initial-color);
   border: none;
   padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 0.2rem;
+  border-radius: 5px;
   font-size: 0.8rem;
 }
 
@@ -95,6 +97,7 @@ body{
 
 .main-heading{
   color: var(--initial-color);
+  font-size: 3rem;
 }
 
 .todo-input-button{
@@ -113,6 +116,7 @@ body{
   width: 25rem;
   font-size: 2rem;
   color:var(--initial-color);
+  text-align: center;
 }
 
 
@@ -122,9 +126,9 @@ body{
 
 
 .weather{
-  position: absolute;
-  top: -8rem;
-  left: 60rem;
+  position: fixed;
+  top: 2rem;
+  right: 2.5rem;
   color: var(--initial-color);
 }
 
@@ -132,14 +136,14 @@ body{
   height: 15rem;
   width: 22rem;
   background-color: var(--initial-color);
-  border-radius: 0.2rem;
+  border-radius: 5px;
   display: flex;
 }
 
 .weather-modal-container{
-  position: absolute;
-  top: -5rem;
-  left: 42rem;
+  position: fixed;
+  top: 5rem;
+  right: 2rem;
 }
 
 .modal-temp{
@@ -168,3 +172,4 @@ body{
   top:0;
   left: 1.9rem;
 }
+

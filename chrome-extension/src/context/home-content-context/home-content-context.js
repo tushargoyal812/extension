@@ -1,13 +1,23 @@
-import { createContext,useContext,useReducer } from "react";
+import { createContext,useContext,useReducer, useState } from "react";
 import { reducerFunc } from "../../reducer/reducer";
 
 
 const HomeContext=createContext()
 
 const HomeProvider=({children})=>{
-    const initilaState={userName:"",userEmail:"",showName:true,isEmail:false,isPassword:false,time:null,focus:false,greetings:"",showModal:false}
+    const [userNameState,setUserNameState]=useState(()=>{
+        let saved=localStorage.getItem("userName")
+        if(saved)
+        {
+            return saved
+        }else{
+            return ""
+        }
+    })
+    
+    const initilaState={nameOfUser:"",userEmail:"",showName:true,isEmail:false,isPassword:false,time:null,focus:false,greetings:"",showModal:false}
     const [state,dispatch]=useReducer(reducerFunc,initilaState)
-    return <HomeContext.Provider value={{state,dispatch}}>{children}</HomeContext.Provider>
+    return <HomeContext.Provider value={{state,dispatch,userNameState,setUserNameState}}>{children}</HomeContext.Provider>
 }
 
 const useHome=()=>useContext(HomeContext)

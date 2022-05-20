@@ -1,3 +1,5 @@
-export const continueNameHandler=(dispatch)=>{
-    dispatch({type:"email-true-showName-false"})
-    }
+export const continueNameHandler=(dispatch,setUserNameState,state)=>{
+  const {nameOfUser}=state
+  setUserNameState(nameOfUser)
+    dispatch({type:"name-false-focus-true"})
+}
