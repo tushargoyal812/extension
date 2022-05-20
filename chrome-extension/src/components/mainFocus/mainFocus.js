@@ -7,12 +7,12 @@ import { TodoModal } from "../todo-modal/todo-modal"
 import './mainFocus.css'
 import {v4 as uuid} from 'uuid'
 import { useState,useEffect } from "react"
-import { useTodo } from "../../context/todo-context/todo-context"
+// import { useTodo } from "../../context/todo-context/todo-context"
 export const MainFocus=()=>{
     const {dispatch,state,userNameState}=useHome()
-    const {todoValues,setTodoValues}=useTodo()
+    // const {todoValues,setTodoValues}=useTodo()
     const {weatherModal,setWeatherModal,weather}=useWeather()
-    const {showModal,time,greetings,userName}=state
+    const {showModal}=state
     const [showCountDown,setShowCountDown]=useState(false)
     const [showAddCountdown,setShowAddCountdown]=useState(false)
     const [addCountdownList,setAddCountdownList]=useState({countdownName:"",countdownDate:"",countdownTime:""})
@@ -24,9 +24,8 @@ export const MainFocus=()=>{
         return []
       }
     })
-    const [showTodayFocus,setShowTodayFocus]=useState(true)
+
     const [todayFocusInput,setTodayFocusInput]=useState()
-    const [todayFocus,setTodayFocus]=useState(false)
     const [doneTodayFocus,setDoneTodayFocus]=useState(false)
     const [leftTime,setLeftTime]=useState()
     const [greet,setGreet]=useState()
