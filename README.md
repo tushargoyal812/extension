@@ -6,10 +6,8 @@ This is fully functional browser extension which inluded add user name, add main
 
 > I used local storage in this extension so that user can't lost any data like todos,events,main focus,name etc.
 
+![extension-image](https://user-images.githubusercontent.com/69681896/169649191-485d095b-764f-470b-b190-609830cb6c08.png)
 
-![image](https://user-images.githubusercontent.com/88363801/166428196-23488a8a-e386-43b0-b65e-af17a74c136d.png)
-
-![image](https://user-images.githubusercontent.com/88363801/166428384-bacae799-6748-419b-9e0a-133a4b674421.png)
 
 ## What's Included?
 
