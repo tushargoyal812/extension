@@ -7,7 +7,6 @@ import { TodoModal } from "../todo-modal/todo-modal"
 import './mainFocus.css'
 import {v4 as uuid} from 'uuid'
 import { useState,useEffect } from "react"
-// import { useTodo } from "../../context/todo-context/todo-context"
 export const MainFocus=()=>{
     const {dispatch,state,userNameState}=useHome()
     const {weatherModal,setWeatherModal,weather}=useWeather()
@@ -27,7 +26,7 @@ export const MainFocus=()=>{
     const [todayFocusInput,setTodayFocusInput]=useState()
     const [doneTodayFocus,setDoneTodayFocus]=useState(false)
     const [leftTime,setLeftTime]=useState()
-    const [greet,setGreet]=useState()
+    const [greet,setGreet]=useState("Good day")
     const [focusState,setFocusState]=useState(()=>{
       const saved=localStorage.getItem("focus")
       if(saved){
