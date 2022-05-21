@@ -23,7 +23,7 @@ This is fully functional browser extension which inluded add user name, add main
 
 - User can add their name
 - User can add and edit main focus
-- Wallpaper and quote changing on every refresh
+- Wallpaper changing on every refresh
 - User can see current time in sync
 - User can see current weather in sync
 - Todo features   
