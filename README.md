@@ -38,6 +38,4 @@ This is fully functional browser extension which inluded add user name, add main
 - Countdown Features
   - User can add multiple countdown
   - User can delete particular countdown
-  - User can delete all countdown 
-- Settings
-  - User can reset all settings
+  - User can delete all countdown
