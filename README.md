@@ -1,6 +1,6 @@
 # Browser Extension | Tab-tools
 
-# [Live Link](https://tabtools.netlify.app/)
+# [Live Link](https://new-tab-extension.netlify.app/)
 
 This is fully functional browser extension which inluded add user name, add main focus,display time and current weather in sync, wallpaper and quote changing on every page refresh,add todos,add multiple countdown,settings.
 
