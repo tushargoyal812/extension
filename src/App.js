@@ -37,7 +37,7 @@ function App() {
   console.log(userNameState,"state");
   useEffect(()=>{
     console.log("useEffect chala");
-    localStorage.setItem("userName",userNameState)
+    localStorage.setItem("extension-user",userNameState)
   },[userNameState])
 
 

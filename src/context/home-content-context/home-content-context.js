@@ -6,7 +6,7 @@ const HomeContext=createContext()
 
 const HomeProvider=({children})=>{
     const [userNameState,setUserNameState]=useState(()=>{
-        let saved=localStorage.getItem("userName")
+        let saved=localStorage.getItem("extension-user")
         if(saved)
         {
             return saved
